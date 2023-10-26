@@ -1,0 +1,45 @@
+*{
+    text-decoration: none;
+    color: white;
+    margin: auto;
+    
+}
+
+.nav{
+    display: flex;
+    background-color: #333333;
+    height:  50px;
+    width: 70%;
+    align-items: center;
+    
+    /* justify-content: space-between; */
+   
+    padding: 0px 15px;
+    font-family: sans-serif;
+    
+    
+}
+.active{
+    font-weight: bold;
+}
+.nav-title{
+   flex: 1;
+}
+li{
+    
+    list-style-type: none;
+}
+.nav-links{
+    display: flex;
+    flex: 2;
+    align-items:center
+    
+  
+}
+.btn{
+    background-color: 
+    #17a2b8;
+    color: white; 
+    box-shadow: 10px 5px 5px black;
+    border: 1px  ;
+}
