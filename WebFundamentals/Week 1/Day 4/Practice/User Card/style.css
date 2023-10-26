@@ -1,0 +1,51 @@
+*{
+    margin: auto;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+}
+
+.box1{
+    margin-top: 20px;
+    width: 452px;
+    height: 50px;
+    background-color: 
+    #17a2b8;
+}
+.box2{
+    width: 450px;
+    height: 170px;
+    background-color: white;
+    border: 1px solid;
+
+}
+li{
+    padding-left: 10px;
+    list-style-type: none;
+    padding: 5px 5px 5px 15px;
+    
+}
+.name{
+    font-weight: bold;
+    
+    padding-top: 25px;
+}
+
+.img1{
+    width: 20px;
+    height: 20px;
+    
+}
+.img2{
+    width: 20px;
+    height: 20px;
+    
+    
+}
+.img3{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 25px;
+    left: 20px;
+}
