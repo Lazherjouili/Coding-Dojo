@@ -1,0 +1,287 @@
+*{
+    margin: auto;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+.nav{
+    display: flex;
+    background-color: black;
+    height: 50px;
+    
+    
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    
+    
+}
+.nav-title{
+    color: white;
+    display: flex;
+    align-items: center;
+
+    margin-right: 10px;
+}
+ul{
+    display: flex;
+    width: 30%;
+}
+.nav ul li a{
+
+    color: white;
+    
+    text-decoration: none;
+}
+
+li{
+    list-style-type: none;
+}
+.btn{
+    padding: 5px 20px;
+    background-color: rgb(27, 211, 211);
+    color: white;
+    border: none;
+    font-family: sans-serif;
+}
+.active{
+    font-weight: bold;
+}
+.container{
+    width: 620px;
+    height: 370px;
+    /* background-color: blue; */
+    margin-top: 5%;
+    display: flex;
+}
+.row1{
+width: 400px;
+height: 100%;
+/* background-color: brown; */
+}
+.row2{
+    width: 200px;
+height: 100%;
+/* background-color: rgb(42, 165, 73); */
+margin-left: 20px;
+}
+.user-card{
+
+}
+.title-card{
+    height: 50px;
+background-color: #17a2b8;
+}
+.info-card{
+    height: 180px;
+    background-color: white;
+    border-color: silver;
+    border-style: solid;
+    border-top: 2px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    
+    
+}
+.education{
+
+}
+.title-education{
+    height: 30px;
+    background-color: rgb(51,51,51);
+}
+.info-education{
+    height: 90px;
+    background-color: white;
+    border-color: silver;
+    border-style: solid;
+    border-top: 2px;
+}
+.requests{
+
+}
+.title-requests{
+    height: 40px;
+    background-color: rgb(51,51,51);
+}
+.info-requests{
+    height: 70px;
+    background-color: white;
+    border-color: silver;
+    border-style: solid;
+    border-top: 2px;
+}
+.connections{
+
+}
+.title-connections{
+    height: 40px;
+    background-color: rgb(51,51,51);
+    margin-top: 19px;
+}
+.info-connections{
+    height: 170px;
+    background-color: white;
+    border-color: silver;
+    border-style: solid;
+    border-top: 2px;
+}
+.view-more{
+    height: 30px;
+    background-color: white;
+    border-color: silver;
+    border-style: solid;
+    border-top: 2px;
+}
+.img-jane{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-color: silver;
+    border-style: solid;
+    position: relative;
+    top: 25px;
+    left: 20px;
+}
+.img-map{
+    width:  10px;
+    height: 15px;
+    margin-right: 5px;
+    
+}
+.img-gear{
+    width:  12px;
+    height: 12px;
+    margin-right: 5px;
+}
+.flex{
+    
+    display: flex;
+    align-items: center;
+}
+.info-card p{
+    
+}
+.info-card p,h3{
+    margin-left: 10px;
+}
+.info-card h3{
+    margin-top: 30px;
+}
+.info-education{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.info-education p{
+    margin-left: 10px;
+    
+}  
+.title-education{
+    display: flex;
+    
+}
+.title-education h3{
+    color: white;
+}
+.circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px;
+    background-color: #cccccc;
+}
+.title-requests{
+    display: flex;
+    
+}
+.title-requests p{
+    color: white;
+
+}
+.icon{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+.img-todd{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.img-phil{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    
+
+}
+.info-requests{
+    display: flex;
+    flex-direction: column;
+    
+}
+.todd{
+    display: flex;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.phill{
+    display: flex;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.LM{
+    display: flex;
+    
+}
+.circle2{
+    width: 40px;
+    height: 23px;
+    border-radius: 50%;
+    border: 1px;
+    background-color: #cccccc;
+}
+.title-connections{
+    display: flex;
+}
+.title-connections P{
+    color: white;
+}
+.img-connection{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    
+}
+.info-connections{
+    display: flex;
+    flex-direction: column;
+  
+    
+}
+.conne{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    
+}
+.conne p{
+    margin-left: 10px;
+}
+.view-more{
+    display: flex;
+    
+}
+.view-more a{
+    margin-left: 10px;
+}
