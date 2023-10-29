@@ -1,0 +1,90 @@
+*{
+    margin: auto;
+    padding: 0px;
+}
+.container{
+    width: 800px;
+    height: 550px;
+    
+}
+.nav{
+    height: 50px;
+    background-color: #cccccc;
+    margin-bottom: 20px;
+    display: flex;
+    
+}
+.box{
+display: flex;
+}
+.ninja{
+    width: 580px;
+}
+.ninja1{
+    height: 230PX;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+
+}
+.ninja2{
+    height: 230PX;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+margin-top: 20px;
+display: flex;
+}
+.definition{
+    width: 200px;
+    height: 150px;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+}
+.search{
+    
+    height: 20px;
+    width: 250px;
+    border: 1.5px;
+    border-color: black;
+    border-style: solid;
+    color: silver;
+}
+.btn{
+    height:20px ;
+    width:50px ;
+    background-color: #2b78e4;
+    box-shadow: 2px 2px black;
+    color: white;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+   margin-left: 20px;
+}
+.btn-likes{
+    height:20px ;
+    width:70px ;
+    background-color:#ffd966;
+    box-shadow: 2px 2px black;
+    
+}
+span{
+    font-weight: bold;
+}
+.definition p{
+    font-size: x-large;
+}
+.btn-definition{
+    background-color: #93c47d;
+    height:25px ;
+    width:80% ;
+    
+    box-shadow: 2px 2px black;
+}
