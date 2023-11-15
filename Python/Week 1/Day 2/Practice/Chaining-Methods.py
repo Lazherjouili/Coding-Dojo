@@ -6,6 +6,7 @@ class user:
         self.age = age
         self.is_rewards_member = False
         self.gold_card_points = 0
+        
 
     def display_info(self):
         print("======================")
@@ -16,22 +17,23 @@ class user:
         print(f"Member:{self.is_rewards_member}")
         print(f"points:{self.gold_card_points}")
         print("======================")
+        return self
     def enroll(self):
         self.is_rewards_member=True
         self.gold_card_points=200
+        return self
 
     def spend_points(self, amount):
         self.gold_card_points-=amount
+        return self
 
 
 
 user1 = user("lazher", "jouili", "lazher.jouili.job@gmail.com", 27)
-user2=user("khaled","hannachi","khaled.hannachi@gmail.com","30")
+user2=user("khaled","hannachi","khaled.hannachi@gmail.com",30)
     
     
 print(user1)
-user1.display_info()
-user1.enroll()
-user1.display_info()
-user1.spend_points(100)
-user1.display_info()
+print(user2)
+user1.display_info().enroll().display_info().spend_points(50).display_info()
+user2.display_info().enroll().display_info().spend_points(80).display_info()
