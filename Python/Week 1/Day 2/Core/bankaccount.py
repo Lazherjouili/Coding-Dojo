@@ -1,8 +1,7 @@
 class BankAccount:
     list_of_accounts = []
     # don't forget to add some default values for these parameters!
-    def __init__(self,name):
-        self.name=name 
+    def __init__(self):
         self.int_rate=0.01
         self.balance=0 
         BankAccount.list_of_accounts.append(self)       
@@ -32,8 +31,8 @@ class BankAccount:
 
 
 
-account1=BankAccount("lazher")
-account2=BankAccount("abdelkarim")
+account1=BankAccount()
+account2=BankAccount()
 
 print(account1)
 print(account2)
