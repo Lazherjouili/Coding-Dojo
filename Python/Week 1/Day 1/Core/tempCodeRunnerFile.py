@@ -1,1 +1,0 @@
-for i in range (0,len(dojo),1):

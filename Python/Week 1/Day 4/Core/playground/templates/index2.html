@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <title>playground2</title>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='my_style.css') }}">
+</head>
+<body>
+<h1>welcome!</h1>
+<div class="flex">
+{%for i in range (0,x) %}
+    
+    <div class="box" style="background-color: {{color}};"></div>
+   
+{% endfor %}
+</div>
+</body>
+</html>

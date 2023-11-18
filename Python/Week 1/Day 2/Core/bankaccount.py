@@ -21,9 +21,9 @@ class BankAccount:
     def display_account_info(self):
         print("======================")
         print(f"Balance:{self.balance}")
-        return self
+        
         print("======================")
-
+        return self
 
     def yield_interest(self):
         self.balance-=self.balance*self.int_rate
