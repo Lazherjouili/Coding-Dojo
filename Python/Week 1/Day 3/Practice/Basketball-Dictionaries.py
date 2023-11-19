@@ -50,10 +50,13 @@ class Player:
         for index in players:
             Player(index)
             
-
+    def __repr__(self):
+        display=f"Player:{self.name},{self.age},{self.position},{self.team}"
+        return display
 
 Player.get_team()
 print(Player.new_team)
+
 kevin = {
     	"name": "Kevin Durant", 
     	"age":34, 
