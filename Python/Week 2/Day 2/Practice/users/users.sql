@@ -1,0 +1,17 @@
+
+insert INTO users (first_name,last_name,emaill) values("lazher","jouili","lazherjouili@gmail.com"),
+("karim","jouili","karimjouili@gmail.com"),("chaker","jouili","chakerjouili@gmail.com");
+select*FROM users ;
+select*FROM users 
+WHERE emaill="lazherjouili@gmail.com";
+select*FROM users 
+WHERE id=3;
+UPDATE users
+set last_name="Pancakes"
+WHERE id=3;
+DELETE FROM users
+WHERE id=2;
+select*from users
+order by first_name desc;
+
+
