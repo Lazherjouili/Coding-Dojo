@@ -38,9 +38,9 @@ students = [
 
 # iterateDictionary(students)
 def iterateDictionary(students):
-    for i in range(0, len(students), 1):
+    for word in students:
 
-        for key, val in students[i].items():
+        for key, val in word.items():
             print(key, " - ", val)
 
 
@@ -48,17 +48,19 @@ def iterateDictionary(students):
 
 
 def iterateDictionary2(key_name,some_list):
-    for i in range(0,len(some_list),1):
+    for word in some_list:
         
-        for key, val  in some_list[i].items():
-            if key===
-                print (val)
+            for key,val in word.items():
+                 if key==key_name:
+                      print(val)
+                      
+iterateDictionary2("first_name",students)         
 
-        # if key_name==="first_name":
+iterateDictionary2("last_name",students)
        
 
 
-print(iterateDictionary2(students))
+# print(iterateDictionary2(students))
 
 
 # 4-Iterate Through a Dictionary with List Values
