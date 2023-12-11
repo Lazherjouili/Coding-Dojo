@@ -2,18 +2,15 @@ from flask_app import DATABASE
 from flask_app.models import user_model 
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
-from datetime import datetime,date
 import re
 EMAIL_REGEX = re.compile(r"^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$")
 
-class Recipe:
+class Book:
     def __init__(self,data) :
         self.id=data["id"]
-        self.name=data["name"]
-        self.description=data["description"]
-        self.instructions=data["instructions"]
-        self.date_cooked=data["date_cooked"]
-        self.under30=data["under30"]
+        self.title=data["title"]
+        self.author=data["author"]
+        self.my_thoughts=data["my_thoughts"]
         self.user_id=data["user_id"]
         self.created_at=data["created_at"]
         self.updated_at=data["updated_at"]
@@ -21,51 +18,50 @@ class Recipe:
 
     @classmethod
     def save(cls,data):
-        query="""INSERT INTO recipes(name,description,instructions,date_cooked,under30,user_id)
-                values (%(name)s,%(description)s,%(instructions)s,%(date_cooked)s,%(under30)s,%(user_id)s); 
+        query="""INSERT INTO books(title,author,my_thoughts,user_id)
+                values (%(title)s,%(author)s,%(my_thoughts)s,%(user_id)s); 
             """
         return connectToMySQL(DATABASE).query_db(query,data)
     
     @classmethod
     def edit(cls,data):
-        query="""UPDATE recipes set name=%(name)s,description=%(description)s,instructions=%(instructions)s,
-        date_cooked=%(date_cooked)s,under30=%(under30)s,user_id=%(user_id)s
+        query="""UPDATE books set title=%(title)s,author=%(author)s,my_thoughts=%(my_thoughts)s
         where id=%(id)s; 
             """
         return connectToMySQL(DATABASE).query_db(query,data)
     
     @classmethod
     def delete(cls,data):
-        query="""delete from recipes 
+        query="""delete from books 
         where id=%(id)s; 
             """
         return connectToMySQL(DATABASE).query_db(query,data)
     
     @classmethod
     def get_all(cls):
-        query="""select * from recipes
-                join users on users.id=recipes.user_id; 
+        query="""select * from books
+                join users on users.id=books.user_id; 
             """
         results= connectToMySQL(DATABASE).query_db(query)
-        recipes=[]
+        books=[]
         for row in results:
-            one_recipe = cls(row)
+            one_book = cls(row)
             data={
                 **row,
                 "id":row["users.id"],
                 "created_at":row["users.created_at"],
                 "updated_at":row["users.updated_at"]
             }
-            one_recipe.creator=user_model.User(data)
-            recipes.append(one_recipe)
+            one_book.creator=user_model.User(data)
+            books.append(one_book)
 
-        return recipes
+        return books
     
     # ? === GET USER BY ID
     @classmethod
-    def get_recipe_by_id(cls, data):
+    def get_book_by_id(cls, data):
         query = """
-                     SELECT * FROM recipes
+                     SELECT * FROM books
                     WHERE id = %(id)s;
                 """
         result = connectToMySQL(DATABASE).query_db(query, data)
@@ -73,22 +69,22 @@ class Recipe:
 
         return cls(result[0])
     @classmethod
-    def get_recipe_by_user(cls,data):
+    def get_book_by_user(cls,data):
         query = """
-                     SELECT * FROM recipes
-                    join users on users.id=recipes.user_id
-                        WHERE recipes.id = %(id)s;
+                     SELECT * FROM books
+                    join users on users.id=books.user_id
+                        WHERE books.id = %(id)s;
                 """
         result = connectToMySQL(DATABASE).query_db(query, data)
-        recipe=cls(result[0])
+        book=cls(result[0])
         data={
                 **result[0],
                 "id":result[0]["users.id"],
                 "created_at":result[0]["users.created_at"],
                 "updated_at":result[0]["users.updated_at"]
             }
-        recipe.creator=user_model.User(data)
-        return recipe
+        book.creator=user_model.User(data)
+        return book
 
 
 
@@ -99,17 +95,16 @@ class Recipe:
     def validate(data):
         is_valid = True
 
-        if len(data["name"]) < 2:
+        if len(data["title"]) < 1:
             is_valid = False
-            flash("name must be at least 3 characters ")
+            flash("title must not be blank ")
         
-        if len(data["description"]) < 2:
+        if len(data["author"]) < 1:
             is_valid = False
-            flash("description must be at least 3 characters")
+            flash("author must not be blank")
         
-        if len(data["instructions"]) < 2:
+        if len(data["my_thoughts"]) < 1:
             is_valid = False
-            flash("instructions must be at least 3 characters")
-        if datetime.strptime(data["date_cooked"],"%Y-%m-%d").date() > date.today():
-            flash("date Invalid")
+            flash("my thoughts must not be blank")
+
         return is_valid
