@@ -32,7 +32,7 @@ const pokémon = Object.freeze([
     // console.log(pokemon_d);
 // !===========2================
     const pokemon_type=pokémon.filter((p) => {
-        return p.types=="fire"
+        return p.types.includes("fire")
     })
     // console.log(pokemon_type);
 // !===========3================
@@ -54,7 +54,7 @@ const pokemon_nam=pokémon.filter((p) => {
 // console.log(pokemon_nam);
 // !===========6================
 const pokemon_poi=pokémon.filter((p) => {
-    return p.types.includes("poison")
+    return p.types=="poison"
 }).map((p)=> {
     return p.name
 })
