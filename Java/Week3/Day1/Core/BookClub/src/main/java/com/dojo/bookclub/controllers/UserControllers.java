@@ -1,4 +1,6 @@
-package com.dojo.loginandregistration.controllers;
+package com.dojo.bookclub.controllers;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,9 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.dojo.loginandregistration.models.LoginUser;
-import com.dojo.loginandregistration.models.User;
-import com.dojo.loginandregistration.services.UserService;
+import com.dojo.bookclub.models.Book;
+import com.dojo.bookclub.models.LoginUser;
+import com.dojo.bookclub.models.User;
+import com.dojo.bookclub.services.BookService;
+import com.dojo.bookclub.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
@@ -20,7 +24,8 @@ public class UserControllers {
 	  // Add once service is implemented:
     @Autowired
     private UserService userServ;
-   
+    @Autowired
+	private BookService bookServ;
    @GetMapping("/")
    public String index(Model model) {
    
@@ -31,7 +36,7 @@ public class UserControllers {
        return "index.jsp";
    }
    
-   @GetMapping("/welcome")
+   @GetMapping("/books")
    public String index(Model model,HttpSession session) {
 	   
 	   // Bind empty User and LoginUser objects to the JSP
@@ -39,7 +44,9 @@ public class UserControllers {
 	  Long userId=(Long) session.getAttribute("user_id");
 	  User user=userServ.findUserById(userId);
 	  model.addAttribute("user",user);
-	   return "welcome.jsp";
+	  List<Book> allBooks = bookServ.allBooks();
+		model.addAttribute("allBooks",allBooks);
+	   return "home.jsp";
    }
    
    @PostMapping("/register")
@@ -60,7 +67,7 @@ public class UserControllers {
        // TO-DO Later: Store their ID from the DB in session, 
        // in other words, log them in.
        session.setAttribute("user_id", newUser.getId());
-       return "redirect:/welcome";
+       return "redirect:/books";
    }
    
    @PostMapping("/login")
@@ -79,7 +86,7 @@ public class UserControllers {
        // TO-DO Later: Store their ID from the DB in session, 
        // in other words, log them in.
        session.setAttribute("user_id", user.getId());
-       return "redirect:/welcome";
+       return "redirect:/books";
    }
    
    @GetMapping("/logout")
